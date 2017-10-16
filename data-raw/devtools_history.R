@@ -6,7 +6,7 @@ devtools::use_package("dplyr")
 devtools::use_package("ggplot2")
 devtools::use_package("prenoms")
 devtools::use_package("tidyr")
-devtools::use_package("dygraph")
+devtools::use_package("dygraphs")
 
 devtools::use_vignette("BoyuanPackage")
 devtools::build_vignettes()

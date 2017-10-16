@@ -5,12 +5,12 @@
 #'
 #' @return ggplot graph
 #' @export
-#' @import dplyr tidyr ggplot2 prenoms dygraph
+#' @import dplyr tidyr ggplot2 prenoms dygraphs
 #' @examples
-draw_names_dygraph <- function(names){
-    prenoms %>% group_by(year, name) %>%
+draw_names <- function(names){
+    prenoms %>% group_by(prenoms$year, prenoms$name) %>%
       summarise(total = sum(n)) %>%
-      filter(name %in% names) %>%
-      spread(key = name, value = total) %>%
+      filter(prenoms$name %in% names) %>%
+      spread(key = prenoms$name, value = total) %>%
       dygraph()
   }
