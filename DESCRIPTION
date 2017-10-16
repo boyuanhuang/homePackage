@@ -12,7 +12,8 @@ RoxygenNote: 6.0.1
 Imports: assertthat,
     readxl, ggplot2, dplyr,
     prenoms,
-    tidyr
+    tidyr,
+    dygraph
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
