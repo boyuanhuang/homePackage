@@ -5,11 +5,12 @@
 #'
 #' @return ggplot graph
 #' @export
-#' @import dplyr tidyr ggplot2 prenoms
+#' @import dplyr tidyr ggplot2 prenoms dygraph
 #' @examples
-draw_names <- function(names){
-  prenoms %>% filter(prenoms$name %in% names) %>%
-    group_by(prenoms$year,prenoms$name) %>%
-    summarize(count=n()) %>%
-    ggplot(aes(x=prenoms$year, y=count,color=prenoms$name))+ geom_line()
-}
+draw_names_dygraph <- function(names){
+    prenoms %>% group_by(year, name) %>%
+      summarise(total = sum(n)) %>%
+      filter(name %in% names) %>%
+      spread(key = name, value = total) %>%
+      dygraph()
+  }
