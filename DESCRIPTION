@@ -13,7 +13,7 @@ Imports: assertthat,
     readxl, ggplot2, dplyr,
     prenoms,
     tidyr,
-    dygraph
+    dygraphs
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
